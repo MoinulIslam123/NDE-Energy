@@ -1,30 +1,49 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  QueryList,
+  ViewChildren,
+  Renderer2,
+  OnInit,
+} from '@angular/core';
+
 
 @Component({
   selector: 'app-body',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './body.component.html',
-  styleUrl: './body.component.css',
+  styleUrls: ['./body.component.css'], // <-- corrected
 })
-export class BodyComponent {
-  // Dummy data for other sections
-  products = [
-    {
-      name: 'Diesel Generator 100kVA',
-      img: 'assets/Copilot_20260120_165328.png',
-    },
-    { name: 'Gas Generator 200kVA', img: 'assets/Copilot_20260120_165328.png' },
-    {
-      name: 'Hybrid Generator 150kVA',
-      img: 'assets/Copilot_20260120_165328.png',
-    },
-    {
-      name: 'Portable Generator 50kVA',
-      img: 'assets/Copilot_20260120_165328.png',
-    },
-  ];
+export class BodyComponent  {
+  // <-- implement OnInit
+  @ViewChildren('cards') cards!: QueryList<ElementRef>;
+
+  constructor(private renderer: Renderer2) {}
+
+  ngAfterViewInit(): void {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.renderer.removeClass(entry.target, 'opacity-0');
+            this.renderer.removeClass(entry.target, 'translate-y-10');
+            this.renderer.addClass(entry.target, 'opacity-100');
+            this.renderer.addClass(entry.target, 'translate-y-0');
+          }
+        });
+      },
+      {
+        threshold: 0.2, // Trigger when 20% visible
+      },
+    );
+
+    // Observe all cards continuously
+    this.cards.forEach((card) => observer.observe(card.nativeElement));
+  }
+
 
   partners = [
     { name: 'Cummins', logo: 'assets/Copilot_20260120_165328.png' },

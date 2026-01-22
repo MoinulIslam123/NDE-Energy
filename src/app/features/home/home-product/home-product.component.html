@@ -1,0 +1,115 @@
+<!-- PRODUCT CENTER -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto space-y-14">
+    <!-- SECTION HEADER -->
+    <div class="text-center animate-fade-up">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800">
+        Product Center
+      </h2>
+
+      <div
+        class="w-28 h-1 mx-auto mt-3 rounded-full"
+        style="background-color: var(--primary-color)"
+      ></div>
+
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        Reliable industrial generator systems engineered for performance,
+        durability and efficiency.
+      </p>
+    </div>
+
+    <!-- CATEGORY LOOP -->
+    <div
+      *ngFor="let category of categories; let i = index"
+      class="flex flex-col lg:flex-row gap-2"
+    >
+      <!-- LEFT COLUMN -->
+      <div class="flex flex-col gap-2 w-full lg:w-1/4">
+        <!-- CATEGORY HEADER -->
+        <h3
+          class="text-lg font-bold text-white tracking-wide shadow-md mx-auto text-center animate-fade-up"
+          style="
+            background-color: var(--primary-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.75rem;
+          "
+        >
+          {{ category.name }}
+        </h3>
+
+        <!-- FIRST PRODUCT CARD -->
+        <div
+          *ngIf="category.firstProduct"
+          class="group relative bg-white rounded-2xl p-4 border border-gray-200 shadow-sm hover:shadow-2xl transition-all duration-300 min-h-[230px] flex flex-col justify-between overflow-hidden animate-slide-in-left"
+        >
+          <!-- glow -->
+          <div
+            class="absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-[radial-gradient(circle_at_top_right,rgba(26,209,255,0.25),transparent_60%)]"
+          ></div>
+          <h4
+            class="relative font-semibold text-gray-800 text-sm lg:text-base mt-2"
+          >
+            {{ category.firstProduct.name }}
+          </h4>
+          <!-- IMAGE -->
+          <div class="relative flex justify-end animate-float">
+            <img
+              [src]="category.firstProduct.img"
+              class="w-32 h-32 object-contain transition-transform duration-300 group-hover:scale-110"
+            />
+          </div>
+
+          <!-- BUTTON -->
+          <div class="relative">
+            <button
+              class="mt-4 px-6 py-2 text-sm font-semibold rounded-lg border border-gray-300 text-gray-700 transition-all duration-300 group-hover:bg-[var(--primary-color)] group-hover:text-white group-hover:border-[var(--primary-color)] group-hover:shadow-lg"
+            >
+              Explore
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT PRODUCTS -->
+      <div
+        class="flex-1 grid gap-2"
+        [ngStyle]="{
+          'grid-template-columns':
+            'repeat(' + category.rightCols + ', minmax(0, 1fr))',
+        }"
+      >
+        <div
+          *ngFor="let product of category.rightProducts"
+          class="group relative bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-2xl transition-all duration-300 min-h-[230px] flex flex-col justify-between overflow-hidden animate-slide-in-right"
+        >
+          <!-- glow -->
+          <div
+            class="absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-[radial-gradient(circle_at_top_right,rgba(26,209,255,0.25),transparent_60%)]"
+          ></div>
+          <!-- NAME -->
+          <h4
+            class="relative font-semibold text-gray-800 text-sm lg:text-base mt-2"
+          >
+            {{ product.name }}
+          </h4>
+          <!-- IMAGE -->
+          <div class="relative flex justify-end animate-float">
+            <img
+              [src]="product.img"
+              class="w-32 h-32 object-contain transition-transform duration-300 group-hover:scale-110"
+            />
+          </div>
+
+          <!-- BUTTON -->
+          <div class="relative">
+            <button
+              class="mt-4 px-6 py-2 text-sm font-semibold rounded-lg border border-gray-300 text-gray-700 transition-all duration-300 group-hover:bg-[var(--primary-color)] group-hover:text-white group-hover:border-[var(--primary-color)] group-hover:shadow-lg"
+            >
+              Explore
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -14,10 +14,10 @@ export class BannerComponent implements OnInit, OnDestroy {
 
   banners = [
     {
-      image: 'assets/Copilot_20260120_165328.png',
-      title: 'NDE Energy Ltd',
-      subtitle: 'Reliable, Industrial Generator & Power Solutions',
-      button: 'Learn More',
+      image: 'assets/Banner.jpg',
+      // title: 'NDE Energy Ltd',
+      // subtitle: 'Reliable, Industrial Generator & Power Solutions',
+      // button: 'Learn More',
     },
     {
       image: 'assets/Copilot_20260120_165412.png',
