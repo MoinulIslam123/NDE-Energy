@@ -44,9 +44,9 @@ export class BodyComponent {
   }
 
   partners = [
-    { name: 'Cumming', logo: 'assets/com1.avif' },
-    { name: 'Generac', logo: 'assets/com2.avif' },
-    { name: 'Caterpillar', logo: 'assets/com3.avif' },
+    { name: 'Cumming', logo: 'assets/_com1.jpg' },
+    { name: 'Generac', logo: 'assets/_com2.jpg' },
+    { name: 'Caterpillar', logo: 'assets/_com3.jpg' },
   ];
 
   faqs = [

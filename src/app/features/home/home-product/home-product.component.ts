@@ -77,8 +77,8 @@ export class HomeProductComponent implements OnInit {
           img: 'assets/Gas Generator.png',
         },
         { name: 'Welding Generator', img: 'assets/Welding Generator.png' },
-        { name: 'Electric Generator', img: 'assets/Electric Generator.jpg' },
-        { name: 'LPG Generator', img: 'assets/lpg-generator-2.jpg' },
+        { name: 'Electric Generator', img: 'assets/Electric Generator.png' },
+        { name: 'LPG Generator', img: 'assets/lpg-generator.png' },
       ],
     },
   ];
