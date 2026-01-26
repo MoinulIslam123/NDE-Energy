@@ -9,7 +9,6 @@ import {
   OnInit,
 } from '@angular/core';
 
-
 @Component({
   selector: 'app-body',
   standalone: true,
@@ -17,7 +16,7 @@ import {
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.css'], // <-- corrected
 })
-export class BodyComponent  {
+export class BodyComponent {
   // <-- implement OnInit
   @ViewChildren('cards') cards!: QueryList<ElementRef>;
 
@@ -44,11 +43,10 @@ export class BodyComponent  {
     this.cards.forEach((card) => observer.observe(card.nativeElement));
   }
 
-
   partners = [
-    { name: 'Cummins', logo: 'assets/Copilot_20260120_165328.png' },
-    { name: 'Generac', logo: 'assets/Copilot_20260120_165328.png' },
-    { name: 'Caterpillar', logo: 'assets/Copilot_20260120_165328.png' },
+    { name: 'Cumming', logo: 'assets/com1.avif' },
+    { name: 'Generac', logo: 'assets/com2.avif' },
+    { name: 'Caterpillar', logo: 'assets/com3.avif' },
   ];
 
   faqs = [

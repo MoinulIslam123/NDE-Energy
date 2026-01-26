@@ -1,89 +1,191 @@
 <!-- WHY NDE ENERGY -->
 <section
   id="why-us"
-  class="py-20 relative overflow-hidden"
+  class="py-16 sm:py-20 relative overflow-hidden"
   style="background: var(--primary-color); color: white"
 >
   <!-- Floating blobs -->
   <div
-    class="absolute -top-20 -left-20 w-96 h-96 bg-white/10 rounded-full animate-blob"
+    class="absolute -top-20 -left-20 w-72 sm:w-96 h-72 sm:h-96 bg-white/10 rounded-full animate-blob"
   ></div>
   <div
-    class="absolute -bottom-32 -right-32 w-96 h-96 bg-white/20 rounded-full animate-blob animation-delay-2000"
+    class="absolute -bottom-32 -right-32 w-72 sm:w-96 h-72 sm:h-96 bg-white/20 rounded-full animate-blob animation-delay-2000"
   ></div>
 
-  <div class="text-center mx-auto max-w-6xl relative z-10">
+  <div class="text-center mx-auto max-w-6xl relative z-10 px-4 sm:px-6">
     <h2
-      class="text-5xl font-extrabold mb-12 tracking-wide drop-shadow-lg animate-fade-slide"
+      class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-8 sm:mb-12 tracking-wide drop-shadow-lg animate-fade-slide"
     >
       Why NDE Energy
     </h2>
 
-    <div class="grid md:grid-cols-3 gap-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10">
       <!-- Card 1 -->
-      <div class="why-card group">
-        <div class="icon-wrapper">
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/shield.png" />
+      <div
+        class="why-card group p-6 sm:p-8 rounded-xl bg-white/10 hover:bg-white/20 transition"
+      >
+        <div class="icon-wrapper mb-4">
+          <img
+            src="https://img.icons8.com/ios-filled/50/ffffff/shield.png"
+            class="mx-auto"
+          />
         </div>
-        <h4>Reliability</h4>
-        <p>High-performance generators built for continuous operation.</p>
+        <h4 class="text-xl sm:text-2xl font-semibold mb-2 text-center">
+          Reliability
+        </h4>
+        <p class="text-sm sm:text-base text-center">
+          High-performance generators built for continuous operation.
+        </p>
       </div>
 
       <!-- Card 2 -->
-      <div class="why-card group">
-        <div class="icon-wrapper">
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/globe.png" />
+      <div
+        class="why-card group p-6 sm:p-8 rounded-xl bg-white/10 hover:bg-white/20 transition"
+      >
+        <div class="icon-wrapper mb-4">
+          <img
+            src="https://img.icons8.com/ios-filled/50/ffffff/globe.png"
+            class="mx-auto"
+          />
         </div>
-        <h4>Global Projects</h4>
-        <p>Supplying power solutions to industries worldwide.</p>
+        <h4 class="text-xl sm:text-2xl font-semibold mb-2 text-center">
+          Global Projects
+        </h4>
+        <p class="text-sm sm:text-base text-center">
+          Supplying power solutions to industries worldwide.
+        </p>
       </div>
 
       <!-- Card 3 -->
-      <div class="why-card group">
-        <div class="icon-wrapper">
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/settings.png" />
+      <div
+        class="why-card group p-6 sm:p-8 rounded-xl bg-white/10 hover:bg-white/20 transition"
+      >
+        <div class="icon-wrapper mb-4">
+          <img
+            src="https://img.icons8.com/ios-filled/50/ffffff/settings.png"
+            class="mx-auto"
+          />
         </div>
-        <h4>Custom Design</h4>
-        <p>Generator systems tailored to your specific energy requirements.</p>
+        <h4 class="text-xl sm:text-2xl font-semibold mb-2 text-center">
+          Custom Design
+        </h4>
+        <p class="text-sm sm:text-base text-center">
+          Generator systems tailored to your specific energy requirements.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<style>
-  @keyframes blob {
-    0%,
-    100% {
-      transform: scale(1) translate(0, 0);
-    }
-    33% {
-      transform: scale(1.2) translate(30px, -20px);
-    }
-    66% {
-      transform: scale(0.9) translate(-20px, 30px);
-    }
-  }
-
-  .animate-blob {
-    animation: blob 8s infinite;
-  }
-
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
-</style>
-
 <!-- PARTNERS -->
-<section id="partners" class="py-16 bg-gray-50">
-  <div class="container mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-12">Our Partners</h2>
-    <div class="flex flex-wrap justify-center items-center gap-8">
-      <img
-        *ngFor="let partner of partners"
-        [src]="partner.logo"
-        [alt]="partner.name"
-        class="h-16 object-contain grayscale hover:grayscale-0 transition"
-      />
+<section id="partners" class="py-20 relative bg-gray-50 overflow-hidden">
+  <!-- subtle background -->
+  <div class="absolute inset-0"></div>
+
+  <div class="relative container mx-auto text-center mb-14">
+    <h2 class="text-4xl font-bold text-gray-800">Trusted Global Partners</h2>
+    <p class="mt-3 text-gray-500 max-w-xl mx-auto">
+      Working with world-class generator and power solution brands
+    </p>
+  </div>
+
+  <!-- SLIDER -->
+  <div class="partner-slider">
+    <div class="partner-track">
+      <ng-container *ngFor="let partner of partners">
+        <div class="partner-card">
+          <img [src]="partner.logo" [alt]="partner.name" />
+        </div>
+      </ng-container>
+
+      <!-- duplicate -->
+      <ng-container *ngFor="let partner of partners">
+        <div class="partner-card">
+          <img [src]="partner.logo" [alt]="partner.name" />
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
+
+<section
+  class="relative h-[520px] md:h-[600px] lg:h-[600px] bg-cover bg-center flex items-center"
+  style="background-image: url(&quot;assets/NDES.jpg&quot;)"
+>
+  <!-- Light Overlay -->
+  <div
+    class="absolute inset-0"
+    style="
+      background: linear-gradient(
+        90deg,
+        rgba(144, 232, 243, 0.3),
+        rgba(114, 127, 129, 0.15)
+      );
+    "
+  ></div>
+
+  <!-- CONTENT -->
+  <div
+    class="relative container mx-auto text-center text-gray-800 px-4 md:px-6 lg:px-8"
+  >
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 fade-up">
+      Get to know NDE Energy
+    </h2>
+
+    <p
+      class="max-w-3xl mx-auto text-base sm:text-lg md:text-xl leading-relaxed mb-8 sm:mb-12 opacity-90 fade-up fade-delay-1"
+    >
+      By continuously innovating in advanced energy technologies, we provide
+      reliable and efficient power solutions to industries worldwide.
+    </p>
+
+    <!-- STATS -->
+    <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6">
+      <div
+        class="bg-white/60 backdrop-blur rounded-xl py-4 sm:py-6 fade-up fade-delay-1 shadow-md"
+      >
+        <h3 class="text-2xl sm:text-3xl font-bold">20+</h3>
+        <p class="text-xs sm:text-sm mt-1">Years Experience</p>
+      </div>
+
+      <div
+        class="bg-white/60 backdrop-blur rounded-xl py-4 sm:py-6 fade-up fade-delay-2 shadow-md"
+      >
+        <h3 class="text-2xl sm:text-3xl font-bold">400+</h3>
+        <p class="text-xs sm:text-sm mt-1">Employees</p>
+      </div>
+
+      <div
+        class="bg-white/60 backdrop-blur rounded-xl py-4 sm:py-6 fade-up fade-delay-3 shadow-md"
+      >
+        <h3 class="text-2xl sm:text-3xl font-bold">25%</h3>
+        <p class="text-xs sm:text-sm mt-1">Engineers</p>
+      </div>
+
+      <div
+        class="bg-white/60 backdrop-blur rounded-xl py-4 sm:py-6 fade-up fade-delay-4 shadow-md"
+      >
+        <h3 class="text-2xl sm:text-3xl font-bold">47,000 m²</h3>
+        <p class="text-xs sm:text-sm mt-1">Plant Area</p>
+      </div>
+
+      <div
+        class="bg-white/60 backdrop-blur rounded-xl py-4 sm:py-6 fade-up fade-delay-5 shadow-md"
+      >
+        <h3 class="text-2xl sm:text-3xl font-bold">780,000</h3>
+        <p class="text-xs sm:text-sm mt-1">Monthly Capacity</p>
+      </div>
+    </div>
+
+    <!-- BUTTON -->
+    <div class="mt-6 sm:mt-10 fade-up fade-delay-5">
+      <a
+        href="#"
+        class="inline-flex items-center gap-2 px-5 sm:px-6 py-2 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition hover:scale-105"
+        style="background-color: #4b8492; color: white"
+      >
+        Learn More
+      </a>
     </div>
   </div>
 </section>

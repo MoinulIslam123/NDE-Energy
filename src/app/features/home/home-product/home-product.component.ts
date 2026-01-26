@@ -55,24 +55,30 @@ export class HomeProductComponent implements OnInit {
 
   categories: Category[] = [
     {
-      name: 'BLDC Motors',
+      name: 'Generator Set',
       image: 'assets/images/bldc-category.jpg',
       products: [
-        { name: 'UAV Engine', img: 'assets/Diesel Generator 2.png' },
-        { name: 'Robot Joint Motor', img: 'assets/Diesel Generator 2.png' },
-        { name: 'Gimbal Motor', img: 'assets/Diesel Generator 2.png' },
-        { name: 'Hub Motor', img: 'assets/Diesel Generator 2.png' },
+        { name: 'Diesel Generator', img: 'assets/Diesel Generator 2.png' },
+        { name: 'Diesel Generator', img: 'assets/Diesel Generator.png' },
+        { name: 'Patrol Generator', img: 'assets/Patrol Generator.png' },
+        // { name: 'Hub Motor', img: 'assets/Diesel Generator 2.png' },
       ],
     },
     {
-      name: 'Servo Motors',
+      name: 'Generator Set_2',
       image: 'assets/images/servo-category.jpg',
       products: [
-        { name: 'AC Servo', img: 'assets/Diesel Generator 2.png' },
-        { name: 'DC Servo', img: 'assets/Diesel Generator 2.png' },
-        { name: 'Industrial Servo', img: 'assets/Diesel Generator 2.png' },
-        { name: 'Mini Servo', img: 'assets/Diesel Generator 2.png' },
-        { name: 'Mini Servo 2', img: 'assets/Diesel Generator 2.png' },
+        {
+          name: 'Stationary Generator',
+          img: 'assets/Stationary Generator.png',
+        },
+        {
+          name: 'Gas Generator',
+          img: 'assets/Gas Generator.png',
+        },
+        { name: 'Welding Generator', img: 'assets/Welding Generator.png' },
+        { name: 'Electric Generator', img: 'assets/Electric Generator.jpg' },
+        { name: 'LPG Generator', img: 'assets/lpg-generator-2.jpg' },
       ],
     },
   ];
