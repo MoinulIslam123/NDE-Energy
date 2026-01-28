@@ -1,0 +1,206 @@
+<!-- ================= CONTACT HERO ================= -->
+<section
+  class="py-10 text-white text-center relative overflow-hidden contact-hero"
+>
+  <div
+    class="absolute top-0 left-0 w-72 h-72 bg-[#4b8492]/20 rounded-full animate-bounce-slow -z-10"
+  ></div>
+  <div
+    class="absolute bottom-0 right-0 w-96 h-96 bg-[#c6dfe5]/20 rounded-full animate-bounce-slow -z-10"
+  ></div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+      Contact Us
+    </h1>
+    <p class="text-lg opacity-90">
+      Get in touch with our team for quotations and inquiries
+    </p>
+  </div>
+</section>
+
+<!-- ================= CONTACT INFO CARDS ================= -->
+<section class="py-8 bg-gray-50">
+  <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div
+      class="bg-white rounded-xl p-2 text-center shadow transform-card cursor-pointer"
+    >
+      <div
+        class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-[#c6dfe5]"
+      >
+        📞
+      </div>
+      <h4 class="font-semibold text-lg">Phone</h4>
+      <p class="text-gray-600 mt-2">+234 (0) 803 456 7890</p>
+    </div>
+
+    <div
+      class="bg-white rounded-xl p-2 text-center shadow transform-card cursor-pointer"
+    >
+      <div
+        class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-[#c6dfe5]"
+      >
+        ✉️
+      </div>
+      <h4 class="font-semibold text-lg">Email</h4>
+      <p class="text-gray-600 mt-2">info.ndeenergy.com</p>
+    </div>
+
+    <div
+      class="bg-white rounded-xl p-2 text-center shadow transform-card cursor-pointer"
+    >
+      <div
+        class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-[#c6dfe5]"
+      >
+        📍
+      </div>
+      <h4 class="font-semibold text-lg">Location</h4>
+      <p class="text-gray-600 mt-2">
+        45 Industrial Avenue, Ikeja, Lagos, Nigeria
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FORM + MAP ================= -->
+<section class="py-20">
+  <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <!-- FORM -->
+    <div>
+      <h2 class="text-2xl font-bold mb-2">Request a Quotation</h2>
+      <p class="text-gray-500 mb-6">
+        Fill out the form below and our team will get back to you within 24
+        hours with a detailed quotation.
+      </p>
+
+      <form #contactForm (submit)="submitForm(contactForm)" class="space-y-4">
+        <input
+          type="text"
+          name="fullName"
+          ngModel
+          placeholder="Full Name *"
+          class="w-full input input-bordered focus:scale-105 transition-transform"
+          required
+        />
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input
+            type="email"
+            name="email"
+            ngModel
+            placeholder="Email Address *"
+            class="input input-bordered w-full focus:scale-105 transition-transform"
+            required
+          />
+          <input
+            type="text"
+            name="phone"
+            ngModel
+            placeholder="Phone Number *"
+            class="input input-bordered w-full focus:scale-105 transition-transform"
+            required
+          />
+        </div>
+
+        <input
+          type="text"
+          name="company"
+          ngModel
+          placeholder="Company Name"
+          class="w-full input input-bordered focus:scale-105 transition-transform"
+        />
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <select class="select select-bordered w-full" name="inquiry" ngModel>
+            <option>Select Inquiry Type</option>
+            <option>Sales</option>
+            <option>Maintenance</option>
+            <option>Support</option>
+          </select>
+
+          <select
+            class="select select-bordered w-full"
+            name="generatorType"
+            ngModel
+          >
+            <option>Select Generator Type</option>
+            <option>Diesel Generator</option>
+            <option>Gas Generator</option>
+            <option>Silent Generator</option>
+          </select>
+        </div>
+
+        <textarea
+          rows="4"
+          name="details"
+          ngModel
+          placeholder="Please provide details about your power requirements..."
+          class="textarea textarea-bordered w-full focus:scale-105 transition-transform"
+        ></textarea>
+
+        <button
+          type="submit"
+          class="w-full py-3 rounded-md text-white font-semibold"
+          style="background-color: #4b8492"
+        >
+          Submit Request
+        </button>
+      </form>
+    </div>
+
+    <!-- MAP + OFFICE INFO -->
+    <div class="space-y-6">
+      <iframe
+        class="w-full h-72 rounded-lg border"
+        src="https://maps.google.com/maps?q=Ikeja%20Lagos&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        loading="lazy"
+      ></iframe>
+
+      <div class="bg-gray-50 p-6 rounded-lg border">
+        <h4 class="font-semibold mb-2 flex items-center gap-2">
+          🕒 Business Hours
+        </h4>
+        <p class="text-sm text-gray-600">
+          Monday – Friday: 8:00 AM – 6:00 PM<br />
+          Saturday: 9:00 AM – 4:00 PM<br />
+          Sunday: Closed
+        </p>
+
+        <p class="mt-3 text-sm font-semibold text-[#4b8492]">
+          24/7 Emergency Support Available
+        </p>
+      </div>
+
+      <div class="bg-[#c6dfe5] p-6 rounded-lg">
+        <h4 class="font-bold mb-2">Need Immediate Assistance?</h4>
+        <p class="text-sm mb-4">
+          For urgent inquiries or emergency support, please call our hotline:
+        </p>
+
+        <a
+          href="tel:+2348034567890"
+          class="inline-block px-6 py-3 bg-[#4b8492] text-white rounded-md font-semibold"
+        >
+          Call Now: +234 (0) 803 456 7890
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHATSAPP BUBBLE ================= -->
+<a
+  href="https://wa.me/2348034567890"
+  target="_blank"
+  class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg animate-bounce cursor-pointer"
+>
+  💬
+</a>
+
+<!-- ================= SUCCESS TOAST ================= -->
+<div
+  *ngIf="showToast"
+  class="fixed top-6 right-6 bg-[#4b8492] text-white px-6 py-3 rounded-lg opacity-100 transition-opacity duration-500 z-50"
+>
+  Request submitted successfully!
+</div>

@@ -1,0 +1,17 @@
+/* SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.9s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* COUNTER STYLE */
+.counter {
+  font-size: 3rem;
+  font-weight: 800;
+}

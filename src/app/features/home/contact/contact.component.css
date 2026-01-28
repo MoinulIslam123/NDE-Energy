@@ -1,0 +1,47 @@
+/* Gradient Text Animation */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.gradient-text {
+  background: linear-gradient(270deg, #4b8492, #c6dfe5, #4b8492);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientBG 6s ease infinite;
+}
+
+/* 3D Cards */
+.transform-card {
+  perspective: 1000px;
+  transition: transform 0.2s ease;
+}
+
+/* Parallax bubbles */
+@keyframes bounce-slow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+.animate-bounce-slow {
+  animation: bounce-slow 6s ease-in-out infinite;
+}
+
+/* Input micro-interaction */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(75, 132, 146, 0.3);
+}

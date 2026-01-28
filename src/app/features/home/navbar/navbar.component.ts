@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,5 +10,12 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
+  constructor(private router: Router) {}
   mobileMenu = false;
+  aboutUs() {
+    this.router.navigate(['/about-us']);
+  }
+  contact() {
+    this.router.navigate(['/contact']);
+  }
 }
