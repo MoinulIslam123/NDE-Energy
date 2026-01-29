@@ -1,134 +1,133 @@
-<footer class="bg-black text-white mt-2">
-  <div
-    class="container mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-3 gap-10"
-  >
-    <!-- ABOUT -->
-    <div>
-      <h3
-        class="text-xl font-semibold mb-4 tracking-wide"
-        style="color: var(--primary-color)"
-      >
-        About NDE Energy
-      </h3>
+<footer class="bg-gray-900 text-gray-300">
+  <!-- MAIN FOOTER -->
+  <div class="container mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- COMPANY INFO -->
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img
+            src="assets/logo1.png"
+            alt="NDE Energy Logo"
+            class="h-10 w-auto object-contain"
+          />
 
-      <p class="text-gray-300 text-sm leading-relaxed">
-        NDE Energy Ltd provides reliable industrial generators and customized
-        power solutions for industries worldwide — delivering performance,
-        efficiency, and trust.
-      </p>
-    </div>
+          <div>
+            <div class="font-bold text-lg text-white">
+              {{ companyInfo.name }}
+            </div>
+            <div class="text-xs text-gray-400">Power Solutions</div>
+          </div>
+        </div>
 
-    <!-- QUICK LINKS -->
-    <div>
-      <h3
-        class="text-xl font-semibold mb-4 tracking-wide"
-        style="color: var(--primary-color)"
-      >
-        Quick Links
-      </h3>
+        <p class="text-sm mb-4 leading-relaxed">
+          {{ companyInfo.description }}
+        </p>
 
-      <ul class="space-y-2 text-sm">
-        <li>
+        <!-- SOCIAL ICONS -->
+        <div class="flex gap-3">
           <a
-            href="#hero"
-            class="footer-link"
-            style="color: var(--primary-color)"
+            href="#"
+            class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#4b8492] transition"
           >
-            Home
+            <i class="fa-brands fa-facebook-f"></i>
           </a>
-        </li>
-        <li>
-          <a
-            href="#products"
-            class="footer-link"
-            style="color: var(--primary-color)"
-          >
-            Products
-          </a>
-        </li>
-        <li>
-          <a
-            href="#why-us"
-            class="footer-link"
-            style="color: var(--primary-color)"
-          >
-            Why Us
-          </a>
-        </li>
-        <li>
-          <a
-            href="#partners"
-            class="footer-link"
-            style="color: var(--primary-color)"
-          >
-            Partners
-          </a>
-        </li>
-        <li>
-          <a
-            href="#faq"
-            class="footer-link"
-            style="color: var(--primary-color)"
-          >
-            FAQs
-          </a>
-        </li>
-      </ul>
-    </div>
 
-    <!-- CONTACT -->
-    <div>
-      <h3
-        class="text-xl font-semibold mb-4 tracking-wide"
-        style="color: var(--primary-color)"
-      >
-        Contact Us
-      </h3>
+          <a
+            href="#"
+            class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#4b8492] transition"
+          >
+            <i class="fa-brands fa-twitter"></i>
+          </a>
 
-      <div class="space-y-2 text-sm text-gray-300">
-        <p>📍 House 22 | Road 4 | Block C | Banani, Dhaka 1213, Bangladesh</p>
-        <p>📞 +88 02 5881150-10</p>
-        <p>✉️ info.ndeenergy.com</p>
+          <a
+            href="#"
+            class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#4b8492] transition"
+          >
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+
+          <a
+            href="#"
+            class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#4b8492] transition"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
       </div>
 
-      <!-- SOCIAL -->
-      <div class="flex gap-4 mt-4">
-        <a
-          href="#"
-          class="social-icon"
-          style="
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-          "
-        >
-          FB
-        </a>
-        <a
-          href="#"
-          class="social-icon"
-          style="
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-          "
-        >
-          IN
-        </a>
-        <a
-          href="#"
-          class="social-icon"
-          style="
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-          "
-        >
-          TW
-        </a>
+      <!-- QUICK LINKS -->
+      <div>
+        <h3 class="text-white font-bold text-lg mb-4">Quick Links</h3>
+
+        <ul class="space-y-2">
+          <li><a routerLink="/" class="hover:text-[#4b8492]">Home</a></li>
+          <li>
+            <a routerLink="/about-us" class="hover:text-[#4b8492]">About Us</a>
+          </li>
+          <li>
+            <a routerLink="/products" class="hover:text-[#4b8492]">Products</a>
+          </li>
+          <li>
+            <a routerLink="/services" class="hover:text-[#4b8492]">Services</a>
+          </li>
+          <li>
+            <a routerLink="/why-choose-us" class="hover:text-[#4b8492]"
+              >Why Choose Us</a
+            >
+          </li>
+          <li>
+            <a routerLink="/contact" class="hover:text-[#4b8492]">Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- SERVICES -->
+      <div>
+        <h3 class="text-white font-bold text-lg mb-4">Our Services</h3>
+
+        <ul class="space-y-2 text-sm">
+          <li>Generator Installation</li>
+          <li>Maintenance & Servicing</li>
+          <li>Genuine Spare Parts</li>
+          <li>24/7 Technical Support</li>
+          <li>Power System Design</li>
+          <li>Emergency Repairs</li>
+        </ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div>
+        <h3 class="text-white font-bold text-lg mb-4">Contact Us</h3>
+
+        <ul class="space-y-3 text-sm">
+          <li class="flex items-start gap-3">
+            <i class="fa-solid fa-location-dot text-[#4b8492] mt-1"></i>
+            <span>{{ companyInfo.address }}</span>
+          </li>
+
+          <li class="flex items-center gap-3">
+            <i class="fa-solid fa-phone text-[#4b8492]"></i>
+            <a href="tel:{{ companyInfo.phone }}" class="hover:text-[#4b8492]">
+              {{ companyInfo.phone }}
+            </a>
+          </li>
+
+          <li class="flex items-center gap-3">
+            <i class="fa-solid fa-envelope text-[#4b8492]"></i>
+            <a
+              href="mailto:{{ companyInfo.email }}"
+              class="hover:text-[#4b8492]"
+            >
+              {{ companyInfo.email }}
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 
-  <!-- COPYRIGHT -->
+  <!-- BOTTOM BAR -->
   <div class="text-center text-gray-400 py-4 border-t border-white/10 text-sm">
-    © 2026 NDE Energy Ltd. All Rights Reserved.
+    © {{ currentYear }} {{ companyInfo.name }}. All rights reserved.
   </div>
 </footer>

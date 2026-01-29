@@ -30,4 +30,9 @@ export const HOME_ROUTES: Routes = [
         (m) => m.HomeProductComponent,
       ),
   },
+  {
+    path: 'services',
+    loadComponent: () =>
+      import('./service/service.component').then((m) => m.ServiceComponent),
+  },
 ];

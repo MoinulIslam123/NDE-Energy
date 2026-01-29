@@ -38,3 +38,21 @@ select:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(75, 132, 146, 0.3);
 }
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 10s ease-in-out infinite;
+}

@@ -42,43 +42,64 @@
 </section>
 
 <!-- ================= CONTACT INFO CARDS ================= -->
-<section class="py-8 bg-gray-50">
+<section class="py-16 bg-gray-50">
   <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- PHONE -->
     <div
-      class="bg-white rounded-xl p-2 text-center shadow transform-card cursor-pointer"
+      class="bg-white rounded-2xl p-4 text-center shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
     >
       <div
-        class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-[#c6dfe5]"
+        class="w-16 h-16 mx-auto flex items-center justify-center rounded-full text-white text-3xl"
+        style="background: linear-gradient(135deg, #4b8492, #3a6a76)"
       >
-        📞
+        <span class="material-icons">call</span>
       </div>
-      <h4 class="font-semibold text-lg">Phone</h4>
+
+      <h4
+        class="font-semibold text-lg text-gray-800 group-hover:text-[#4b8492] transition"
+      >
+        Phone
+      </h4>
       <p class="text-gray-600 mt-2">+234 (0) 803 456 7890</p>
     </div>
 
+    <!-- EMAIL -->
     <div
-      class="bg-white rounded-xl p-2 text-center shadow transform-card cursor-pointer"
+      class="bg-white rounded-2xl p-4 text-center shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
     >
       <div
-        class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-[#c6dfe5]"
+        class="w-16 h-16 mx-auto flex items-center justify-center rounded-full text-white text-3xl"
+        style="background: linear-gradient(135deg, #4b8492, #3a6a76)"
       >
-        ✉️
+        <span class="material-icons">email</span>
       </div>
-      <h4 class="font-semibold text-lg">Email</h4>
+
+      <h4
+        class="font-semibold text-lg text-gray-800 group-hover:text-[#4b8492] transition"
+      >
+        Email
+      </h4>
       <p class="text-gray-600 mt-2">info.ndeenergy.com</p>
     </div>
 
+    <!-- LOCATION -->
     <div
-      class="bg-white rounded-xl p-2 text-center shadow transform-card cursor-pointer"
+      class="bg-white rounded-2xl p-4 text-center shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
     >
       <div
-        class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-[#c6dfe5]"
+        class="w-16 h-16 mx-auto flex items-center justify-center rounded-full text-white text-3xl"
+        style="background: linear-gradient(135deg, #4b8492, #3a6a76)"
       >
-        📍
+        <span class="material-icons">location_on</span>
       </div>
-      <h4 class="font-semibold text-lg">Location</h4>
-      <p class="text-gray-600 mt-2">
-        45 Industrial Avenue, Ikeja, Lagos, Nigeria
+
+      <h4
+        class="font-semibold text-lg text-gray-800 group-hover:text-[#4b8492] transition"
+      >
+        Location
+      </h4>
+      <p class="text-gray-600 mt-2 leading-relaxed">
+        House 22 | Road 4 | Block C | Banani, Dhaka 1213, Bangladesh
       </p>
     </div>
   </div>
@@ -88,82 +109,129 @@
 <section class="py-20">
   <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
     <!-- FORM -->
-    <div>
-      <h2 class="text-2xl font-bold mb-2">Request a Quotation</h2>
-      <p class="text-gray-500 mb-6">
-        Fill out the form below and our team will get back to you within 24
-        hours with a detailed quotation.
+    <div
+      class="bg-white/80 backdrop-blur-xl p-10 rounded-2xl shadow-xl border border-gray-200 w-full"
+    >
+      <h2 class="text-3xl font-bold mb-2 text-gray-800">Request a Quotation</h2>
+
+      <p class="text-gray-500 mb-8">
+        Fill out the form below and our team will get back to you within
+        <span class="font-semibold text-[#4b8492]">24 hours</span>.
       </p>
 
       <form #contactForm (submit)="submitForm(contactForm)" class="space-y-4">
-        <input
-          type="text"
-          name="fullName"
-          ngModel
-          placeholder="Full Name *"
-          class="w-full input input-bordered focus:scale-105 transition-transform"
-          required
-        />
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input
-            type="email"
-            name="email"
-            ngModel
-            placeholder="Email Address *"
-            class="input input-bordered w-full focus:scale-105 transition-transform"
-            required
-          />
+        <!-- FULL NAME -->
+        <div class="relative">
+          <span
+            class="material-icons absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+          >
+            person
+          </span>
           <input
             type="text"
-            name="phone"
+            name="fullName"
             ngModel
-            placeholder="Phone Number *"
-            class="input input-bordered w-full focus:scale-105 transition-transform"
             required
+            placeholder="Full Name *"
+            class="w-full pl-12 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#4b8492] focus:ring-2 focus:ring-[#4b8492]/30 transition"
           />
         </div>
 
-        <input
-          type="text"
-          name="company"
-          ngModel
-          placeholder="Company Name"
-          class="w-full input input-bordered focus:scale-105 transition-transform"
-        />
-
+        <!-- EMAIL + PHONE -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <select class="select select-bordered w-full" name="inquiry" ngModel>
-            <option>Select Inquiry Type</option>
+          <div class="relative">
+            <span
+              class="material-icons absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+            >
+              email
+            </span>
+            <input
+              type="email"
+              name="email"
+              ngModel
+              required
+              placeholder="Email Address *"
+              class="w-full pl-12 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#4b8492] focus:ring-2 focus:ring-[#4b8492]/30 transition"
+            />
+          </div>
+
+          <div class="relative">
+            <span
+              class="material-icons absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+            >
+              call
+            </span>
+            <input
+              type="text"
+              name="phone"
+              ngModel
+              required
+              placeholder="Phone Number *"
+              class="w-full pl-12 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#4b8492] focus:ring-2 focus:ring-[#4b8492]/30 transition"
+            />
+          </div>
+        </div>
+
+        <!-- COMPANY -->
+        <div class="relative">
+          <span
+            class="material-icons absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+          >
+            business
+          </span>
+          <input
+            type="text"
+            name="company"
+            ngModel
+            placeholder="Company Name"
+            class="w-full pl-12 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#4b8492] focus:ring-2 focus:ring-[#4b8492]/30 transition"
+          />
+        </div>
+
+        <!-- SELECTS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <select
+            name="inquiry"
+            ngModel
+            class="w-full py-3 px-4 rounded-lg border border-gray-300 focus:outline-none focus:border-[#4b8492] focus:ring-2 focus:ring-[#4b8492]/30 transition"
+          >
+            <option vlaue="">Select Inquiry Type</option>
             <option>Sales</option>
             <option>Maintenance</option>
             <option>Support</option>
           </select>
 
           <select
-            class="select select-bordered w-full"
             name="generatorType"
             ngModel
+            class="w-full py-3 px-4 rounded-lg border border-gray-300 focus:outline-none focus:border-[#4b8492] focus:ring-2 focus:ring-[#4b8492]/30 transition"
           >
-            <option>Select Generator Type</option>
+            <option value="">Select Generator Type</option>
             <option>Diesel Generator</option>
             <option>Gas Generator</option>
             <option>Silent Generator</option>
           </select>
         </div>
 
-        <textarea
-          rows="4"
-          name="details"
-          ngModel
-          placeholder="Please provide details about your power requirements..."
-          class="textarea textarea-bordered w-full focus:scale-105 transition-transform"
-        ></textarea>
+        <!-- MESSAGE -->
+        <div class="relative">
+          <span class="material-icons absolute left-4 top-4 text-gray-400">
+            description
+          </span>
+          <textarea
+            rows="4"
+            name="details"
+            ngModel
+            placeholder="Describe your power requirement..."
+            class="w-full pl-12 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#4b8492] focus:ring-2 focus:ring-[#4b8492]/30 transition resize-none"
+          ></textarea>
+        </div>
 
+        <!-- BUTTON -->
         <button
           type="submit"
-          class="w-full py-3 rounded-md text-white font-semibold"
-          style="background-color: #4b8492"
+          class="w-full py-3 rounded-lg text-white font-semibold text-lg tracking-wide transition transform hover:scale-[1.02] shadow-lg"
+          style="background: linear-gradient(135deg, #4b8492, #3a6a76)"
         >
           Submit Request
         </button>

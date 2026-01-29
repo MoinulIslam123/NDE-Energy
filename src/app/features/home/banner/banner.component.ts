@@ -1,56 +1,58 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from 'express';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-banner',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.css'],
 })
-export class BannerComponent implements OnInit, OnDestroy {
-  currentIndex = 0;
-  interval!: ReturnType<typeof setInterval>;
-
-  banners = [
-    {
-      image: 'assets/Banner.jpg',
-      // title: 'NDE Energy Ltd',
-      // subtitle: 'Reliable, Industrial Generator & Power Solutions',
-      // button: 'Learn More',
-    },
-    {
-      image: 'assets/Copilot_20260120_165412.png',
-      title: 'Industrial Power Systems',
-      subtitle: 'Diesel & Gas Generator Solutions',
-      button: 'Our Products',
-    },
-  
-  ];
-
-  ngOnInit() {
-    if (typeof window !== 'undefined') {
-      this.startAutoSlide();
-    }
+export class BannerComponent implements AfterViewInit {
+  ngAfterViewInit() {
+    this.initScrollReveal();
+    this.initCounters();
   }
 
-  startAutoSlide() {
-    this.interval = setInterval(() => {
-      this.nextSlide();
-    }, 4000); // every 4 seconds
+  initScrollReveal() {
+    const elements = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+
+    elements.forEach((el) => observer.observe(el));
   }
 
-  nextSlide() {
-    this.currentIndex =
-      this.currentIndex === this.banners.length - 1 ? 0 : this.currentIndex + 1;
-  }
+  initCounters() {
+    const counters = document.querySelectorAll('.counter');
 
-  prevSlide() {
-    this.currentIndex =
-      this.currentIndex === 0 ? this.banners.length - 1 : this.currentIndex - 1;
-  }
+    counters.forEach((counter: any) => {
+      const target = +counter.getAttribute('data-target');
+      let count = 0;
 
-  ngOnDestroy() {
-    clearInterval(this.interval);
+      const update = () => {
+        const increment = target / 80;
+
+        if (count < target) {
+          count += increment;
+          counter.innerText = Math.ceil(count);
+          requestAnimationFrame(update);
+        } else {
+          counter.innerText = target + '+';
+        }
+      };
+
+      update();
+    });
   }
 }

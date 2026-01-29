@@ -1,0 +1,183 @@
+<div class="bg-gray-50 min-h-screen font-sans">
+  <section
+    class="relative overflow-hidden py-24 text-white"
+    style="background: linear-gradient(135deg, #4b8492, #3a6a76)"
+  >
+    <!-- Floating bubbles -->
+    <span
+      class="absolute w-72 h-72 bg-[#c6dfe5]/20 rounded-full top-[-80px] left-[-80px] animate-float"
+    ></span>
+    <span
+      class="absolute w-96 h-96 bg-white/10 rounded-full bottom-[-120px] right-[-120px] animate-float-delay"
+    ></span>
+
+    <div class="container mx-auto text-center relative z-10 reveal">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-3 animate-fade-up">
+        Our Services
+      </h1>
+      <p class="text-lg opacity-90 animate-fade-up delay-100">
+        Comprehensive power solutions from installation to maintenance
+      </p>
+    </div>
+  </section>
+  <!-- MAIN SERVICES -->
+  <!-- ================= MAIN SERVICES ================= -->
+  <section class="max-w-6xl mx-auto py-20 px-6 reveal">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+        What We Offer
+      </h2>
+      <p class="text-gray-500 mt-2 max-w-2xl mx-auto">
+        Professional services to keep your power systems running at peak
+        performance
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div
+        *ngFor="let service of mainServices"
+        class="bg-white p-8 rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition transform hover:-translate-y-2 reveal"
+      >
+        <div
+          class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-white text-2xl font-bold"
+          [ngStyle]="{
+            background:
+              'linear-gradient(135deg, var(--primary-color), #3a6a76)',
+          }"
+        >
+          <span class="material-icons text-2xl">{{ service.icon }}</span>
+        </div>
+        <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-2">
+          {{ service.title }}
+        </h3>
+        <p class="text-gray-600 leading-relaxed">{{ service.desc }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ADDITIONAL SERVICES ================= -->
+  <section class="bg-gray-100 py-20 reveal">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+          Additional Services
+        </h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">
+          Extra offerings to ensure your power solutions are comprehensive and
+          reliable
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div
+          *ngFor="let service of additionalServices"
+          class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm text-center hover:shadow-lg transition transform hover:-translate-y-1 reveal"
+        >
+          <div
+            class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl"
+            [ngStyle]="{
+              background:
+                'linear-gradient(135deg, var(--primary-color), #3a6a76)',
+            }"
+          >
+            <span class="material-icons text-xl">{{ service.icon }}</span>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">
+            {{ service.title }}
+          </h3>
+          <p class="text-gray-600 text-sm">{{ service.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE PROCESS -->
+  <section class="max-w-6xl mx-auto py-20 px-6 text-center reveal">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+      Our Service Process
+    </h2>
+    <p class="text-gray-500 mb-16 max-w-2xl mx-auto">
+      A systematic approach to ensure quality and reliability
+    </p>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div *ngFor="let step of processSteps" class="relative reveal">
+        <div
+          class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl"
+          style="background: linear-gradient(135deg, #4b8492, #3a6a76)"
+        >
+          {{ step.id }}
+        </div>
+        <h4 class="font-bold text-gray-800">{{ step.title }}</h4>
+        <p class="text-xs text-gray-500 mt-1">{{ step.desc }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE OUR SERVICES -->
+  <section
+    class="relative py-20 text-white text-center reveal bg-cover bg-center"
+    style="
+      background-image:
+        linear-gradient(rgba(75, 132, 146, 0.9), rgba(75, 132, 146, 0.9)),
+        url(assets/service.jpeg);
+    "
+  >
+    <div class="max-w-5xl mx-auto text-center mb-5">
+      <h2 class="text-3xl md:text-4xl font-bold">Why Choose Our Services?</h2>
+      <p class="text-white/80 mt-2">
+        Professional, reliable, and customer-focused solutions for all your
+        power needs
+      </p>
+    </div>
+
+    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+      <!-- Certified Technicians -->
+      <div
+        class="hover:scale-105 transition transform reveal bg-white/10 p-8 rounded-2xl shadow-md"
+      >
+        <h4 class="font-bold text-lg">Certified Technicians</h4>
+        <p class="text-sm opacity-90 mt-2">
+          Trained professionals with years of experience
+        </p>
+      </div>
+
+      <!-- Quick Response -->
+      <div
+        class="border-x border-white/20 hover:scale-105 transition transform reveal bg-white/10 p-8 rounded-2xl shadow-md"
+      >
+        <h4 class="font-bold text-lg">Quick Response</h4>
+        <p class="text-sm opacity-90 mt-2">
+          Fast turnaround on service requests
+        </p>
+      </div>
+
+      <!-- Genuine Parts -->
+      <div
+        class="hover:scale-105 transition transform reveal bg-white/10 p-8 rounded-2xl shadow-md"
+      >
+        <h4 class="font-bold text-lg">Genuine Parts</h4>
+        <p class="text-sm opacity-90 mt-2">
+          Only authentic replacement components
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / FOOTER -->
+  <footer class="py-20 text-center bg-gray-50 reveal">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+      Ready to Get Started?
+    </h2>
+    <p class="text-gray-600 mb-8 max-w-xl mx-auto">
+      Contact us today to discuss your power needs and get a customized service
+      plan
+    </p>
+    <button
+      routerLink="/contact"
+      class="bg-[#4b8492] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#3a6a76] transition transform hover:-translate-y-1"
+    >
+      Contact Our Team
+    </button>
+  </footer>
+</div>

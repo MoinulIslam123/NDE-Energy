@@ -1,16 +1,27 @@
-@keyframes gradient-move {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* Scroll reveal fade-up */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
 }
 
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient-move 5s ease infinite;
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade-up delays */
+.delay-100 {
+  transition-delay: 0.1s;
+}
+
+.delay-200 {
+  transition-delay: 0.2s;
+}
+
+/* Floating/hover effects for buttons */
+button:hover {
+  transform: translateY(-2px);
 }
