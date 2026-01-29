@@ -190,3 +190,98 @@
     transform: translateX(-50%);
   }
 }
+
+/* ------- */
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero fade animation */
+.hero-title {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeSlide 1s forwards 0.5s;
+}
+
+@keyframes fadeSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animate cards */
+.opacity-0 {
+  opacity: 0;
+}
+.translate-y-10 {
+  transform: translateY(40px);
+}
+.opacity-100 {
+  opacity: 1;
+  transition: all 0.6s ease-out;
+}
+.translate-y-0 {
+  transform: translateY(0);
+}
+
+/* Mobile menu slide down */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slideDown {
+  animation: slideDown 0.4s ease-out forwards;
+}
+
+/* Partner slider scrollbar hidden */
+.partner-slider::-webkit-scrollbar {
+  display: none;
+}
+.partner-slider {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Collapse FAQ */
+.collapse input {
+  display: none;
+}
+.collapse-title {
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+}
+.collapse-content {
+  padding: 0 1rem 1rem;
+  display: none;
+}
+.collapse input:checked ~ .collapse-content {
+  display: block;
+}
+
+/* Floating blobs */
+.animate-blob {
+  animation: blob 8s infinite;
+}
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+.animation-delay-2000 {
+  animation-delay: 2s;
+}

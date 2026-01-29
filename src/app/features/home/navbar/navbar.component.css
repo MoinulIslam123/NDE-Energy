@@ -1,0 +1,52 @@
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.25s ease-out;
+}
+
+.mobile-item {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+  transition: all 0.25s ease;
+}
+
+.mobile-item:last-child {
+  border-bottom: none;
+}
+
+.mobile-item:hover {
+  padding-left: 8px;
+  color: var(--primary-color);
+}
+
+/* Mobile menu slide-down animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+/* Optional: shadow on scroll */
+nav.scrolled {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}

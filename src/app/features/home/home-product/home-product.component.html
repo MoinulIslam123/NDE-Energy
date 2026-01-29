@@ -62,6 +62,7 @@
           <!-- BUTTON -->
           <div class="relative">
             <button
+              (click)="openModal(category.firstProduct)"
               class="mt-4 px-6 py-2 text-sm font-semibold rounded-lg border border-gray-300 text-gray-700 transition-all duration-300 group-hover:bg-[var(--primary-color)] group-hover:text-white group-hover:border-[var(--primary-color)] group-hover:shadow-lg"
             >
               Explore
@@ -103,6 +104,7 @@
           <!-- BUTTON -->
           <div class="relative">
             <button
+              (click)="openModal(product)"
               class="mt-4 px-6 py-2 text-sm font-semibold rounded-lg border border-gray-300 text-gray-700 transition-all duration-300 group-hover:bg-[var(--primary-color)] group-hover:text-white group-hover:border-[var(--primary-color)] group-hover:shadow-lg"
             >
               Explore
@@ -113,3 +115,77 @@
     </div>
   </div>
 </section>
+
+<!-- PRODUCT MODAL -->
+<div
+  *ngIf="selectedProduct"
+  class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50"
+>
+  <div
+    class="bg-white rounded-3xl max-w-4xl w-full p-8 relative shadow-2xl animate-fade-up"
+  >
+    <!-- Close -->
+    <button
+      (click)="closeModal()"
+      class="absolute top-4 right-5 text-3xl text-gray-400 hover:text-gray-700"
+    >
+      ×
+    </button>
+
+    <div class="grid lg:grid-cols-2 gap-8 items-center">
+      <!-- IMAGE -->
+      <div class="flex justify-center">
+        <img
+          [src]="selectedProduct.img"
+          class="max-h-[320px] object-contain drop-shadow-xl"
+        />
+      </div>
+
+      <!-- DETAILS -->
+      <div>
+        <h2 class="text-3xl font-bold text-gray-800 mb-3">
+          {{ selectedProduct.name }}
+        </h2>
+
+        <p class="text-gray-600 leading-relaxed mb-5">
+          {{ selectedProduct.description }}
+        </p>
+
+        <!-- INFO GRID -->
+        <div class="grid grid-cols-2 gap-4 text-sm mb-5">
+          <div>
+            <span class="font-semibold text-gray-700">Power Range:</span>
+            <div class="text-gray-600">{{ selectedProduct.power }}</div>
+          </div>
+
+          <div>
+            <span class="font-semibold text-gray-700">Fuel Type:</span>
+            <div class="text-gray-600">{{ selectedProduct.fuel }}</div>
+          </div>
+
+          <div class="col-span-2">
+            <span class="font-semibold text-gray-700">Applications:</span>
+            <div class="text-gray-600">
+              {{ selectedProduct.application }}
+            </div>
+          </div>
+        </div>
+
+        <!-- FEATURES -->
+        <div>
+          <h4 class="font-semibold text-gray-800 mb-2">Key Features</h4>
+          <ul class="list-disc list-inside text-gray-600 space-y-1">
+            <li *ngFor="let f of selectedProduct.features">{{ f }}</li>
+          </ul>
+        </div>
+
+        <button
+          routerLink="/contact"
+          class="mt-6 px-8 py-2 bg-[var(--primary-color)] text-white rounded-lg shadow hover:opacity-90 transition"
+        >
+          Request Quotation
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+/* Desktop */
+.main-content {
+  padding-top: 120px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 90px;
+  }
+}
+
+/* Fix anchor scroll hiding behind navbar */
+html {
+  scroll-padding-top: 120px;
+}

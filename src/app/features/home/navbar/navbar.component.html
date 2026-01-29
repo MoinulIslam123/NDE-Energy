@@ -1,59 +1,47 @@
-<!-- NAVBAR -->
-<nav class="bg-[--primary-color] text-white fixed w-full z-50 shadow-lg">
-  <div class="container mx-auto flex items-center justify-between py-4 px-6">
+<nav
+  class="bg-[#e6f7ff]/90 backdrop-blur-md shadow-lg fixed w-full z-50 transition-all duration-500"
+>
+  <div
+    class="container mx-auto flex items-center justify-between py-3 px-4 md:px-6"
+  >
     <!-- Logo -->
-    <a href="#" class="text-2xl font-bold tracking-wide">NDE Energy Ltd</a>
+    <a
+      (click)="navigate('/', 'hero')"
+      class="flex items-center gap-3 cursor-pointer"
+    >
+      <img
+        src="assets/logo1.png"
+        alt="NDE Energy Logo"
+        class="h-10 w-auto object-contain"
+      />
+      <span class="text-lg font-bold text-[#4b8492] sm:text-xl sm:block">
+        NDE Energy Ltd</span
+      >
+    </a>
 
     <!-- Desktop Menu -->
-    <ul class="hidden md:flex space-x-8 font-medium">
-      <li>
+    <ul class="hidden md:flex space-x-8 font-medium items-center">
+      <li
+        *ngFor="let link of ['hero', 'products', 'why-us', 'partners', 'faq']"
+      >
         <a
-          href="#hero"
-          class="transition-colors duration-300 hover:text-black/80"
-          >Home</a
+          (click)="navigate('/', link)"
+          [ngClass]="{
+            'text-[#4b8492] font-semibold': activeSection === link,
+            'hover:text-[#4b8492]': activeSection !== link,
+          }"
+          class="transition-colors duration-300 cursor-pointer"
         >
+          {{ link === "hero" ? "Home" : (link.replace("-", " ") | titlecase) }}
+        </a>
       </li>
       <li>
         <a
-          (click)="aboutUs()"
-          class="transition-colors duration-300 hover:text-black/80"
-          >About-Us</a
+          (click)="navigate('/', 'contact')"
+          class="bg-[#4b8492] text-white px-5 py-2 rounded-lg shadow-lg hover:bg-[#3a6b73] transition-all duration-300 cursor-pointer"
         >
-      </li>
-      <li>
-        <a
-          href="#products"
-          class="transition-colors duration-300 hover:text-black/80"
-          >Products</a
-        >
-      </li>
-      <li>
-        <a
-          href="#why-us"
-          class="transition-colors duration-300 hover:text-black/80"
-          >Why Us</a
-        >
-      </li>
-      <li>
-        <a
-          href="#partners"
-          class="transition-colors duration-300 hover:text-black/80"
-          >Partners</a
-        >
-      </li>
-      <li>
-        <a
-          href="#faq"
-          class="transition-colors duration-300 hover:text-black/80"
-          >FAQs</a
-        >
-      </li>
-      <li>
-        <a
-          (click)="contact()"
-          class="border border-white hover:bg-white hover:text-[#00e673] px-4 py-1 rounded transition-all duration-300"
-          >Contact</a
-        >
+          Contact
+        </a>
       </li>
     </ul>
 
@@ -62,7 +50,7 @@
       <button (click)="mobileMenu = !mobileMenu" class="focus:outline-none">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
+          class="h-6 w-6 text-gray-800"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -89,37 +77,22 @@
   <!-- Mobile Menu -->
   <div
     *ngIf="mobileMenu"
-    class="md:hidden bg-[#00e673] text-white px-6 py-4 space-y-3 shadow-inner"
+    class="md:hidden absolute top-full left-0 w-full bg-white shadow-xl rounded-b-3xl animate-slideDown z-40"
   >
-    <a
-      href="#hero"
-      class="block font-medium transition-colors duration-300 hover:text-black/80"
-      >Home</a
-    >
-    <a
-      href="#products"
-      class="block font-medium transition-colors duration-300 hover:text-black/80"
-      >Products</a
-    >
-    <a
-      href="#why-us"
-      class="block font-medium transition-colors duration-300 hover:text-black/80"
-      >Why Us</a
-    >
-    <a
-      href="#partners"
-      class="block font-medium transition-colors duration-300 hover:text-black/80"
-      >Partners</a
-    >
-    <a
-      href="#faq"
-      class="block font-medium transition-colors duration-300 hover:text-black/80"
-      >FAQs</a
-    >
-    <a
-      href="#contact"
-      class="block border border-white hover:bg-white hover:text-[#00e673] px-4 py-1 rounded text-center transition-all duration-300"
-      >Contact</a
-    >
+    <div class="px-6 py-6 flex flex-col space-y-4">
+      <a
+        *ngFor="let link of ['hero', 'products', 'why-us', 'partners', 'faq']"
+        (click)="navigate('/', link)"
+        class="text-gray-800 py-2 px-3 rounded-lg hover:bg-[#e0f2f4] transition-all duration-300 cursor-pointer"
+      >
+        {{ link === "hero" ? "Home" : (link.replace("-", " ") | titlecase) }}
+      </a>
+      <a
+        (click)="navigate('/', 'contact')"
+        class="text-white bg-[#4b8492] text-center py-3 rounded-lg font-semibold hover:bg-[#3a6b73] transition-all duration-300"
+      >
+        Contact Us
+      </a>
+    </div>
   </div>
 </nav>

@@ -7,6 +7,7 @@ import {
   ViewChildren,
   Renderer2,
   OnInit,
+  Directive,
 } from '@angular/core';
 
 @Component({
@@ -41,6 +42,16 @@ export class BodyComponent {
 
     // Observe all cards continuously
     this.cards.forEach((card) => observer.observe(card.nativeElement));
+    const statsSection = document.querySelector('.stats-grid');
+    if (statsSection) {
+      const statsObserver = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) this.animateCounters();
+        },
+        { threshold: 0.5 },
+      );
+      statsObserver.observe(statsSection);
+    }
   }
 
   partners = [
@@ -49,21 +60,24 @@ export class BodyComponent {
     { name: 'Caterpillar', logo: 'assets/_com3.jpg' },
   ];
 
-  faqs = [
-    {
-      question: 'What is NDE Energy?',
-      answer:
-        'NDE Energy Ltd provides industrial generator solutions for all your power needs.',
-    },
-    {
-      question: 'Can I customize my generator?',
-      answer:
-        'Yes, we offer tailored generator systems for specific power requirements.',
-    },
-    {
-      question: 'How do I place an order?',
-      answer:
-        'You can contact us via our website contact form or call our sales team.',
-    },
-  ];
+
+  // Animate counters when visible
+
+  animateCounters() {
+    const stats = document.querySelectorAll('.stat h3');
+    stats.forEach((el: any) => {
+      const target = +el.innerText.replace(/\D/g, '');
+      let count = 0;
+      const increment = Math.ceil(target / 200);
+      const interval = setInterval(() => {
+        count += increment;
+        if (count >= target) {
+          el.innerText = target.toLocaleString();
+          clearInterval(interval);
+        } else {
+          el.innerText = count.toLocaleString();
+        }
+      }, 10);
+    });
+  }
 }

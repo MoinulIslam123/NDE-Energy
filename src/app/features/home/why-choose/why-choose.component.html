@@ -1,0 +1,138 @@
+<!-- HERO SECTION -->
+<section
+  class="relative overflow-hidden py-24 text-white"
+  style="background: linear-gradient(135deg, #4b8492, #3a6a76)"
+>
+  <!-- Floating bubbles -->
+  <span
+    class="absolute w-72 h-72 bg-[#c6dfe5]/20 rounded-full top-[-80px] left-[-80px] animate-float"
+  ></span>
+  <span
+    class="absolute w-96 h-96 bg-white/10 rounded-full bottom-[-120px] right-[-120px] animate-float-delay"
+  ></span>
+
+  <div class="container mx-auto text-center relative z-10 reveal">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-3 animate-fade-up">
+      Why Choose <span class="text-[#c6dfe5]">NDE Energy?</span>
+    </h1>
+    <p class="text-lg opacity-90 animate-fade-up delay-100">
+      Your trusted partner for reliable power solutions
+    </p>
+  </div>
+</section>
+
+<!-- WHAT SETS US APART -->
+<section class="py-20 bg-gray-50">
+  <div class="container mx-auto">
+    <div class="text-center mb-14 reveal">
+      <h2 class="text-3xl font-bold text-gray-800 animate-fade-up">
+        What Sets Us Apart
+      </h2>
+      <p class="text-gray-500 mt-2 animate-fade-up delay-100">
+        Experience the NDE Energy difference — quality, reliability, and service
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="feature-card reveal" *ngFor="let item of apartList">
+        <div class="icon text-4xl mb-3 animate-fade-up">
+          {{ getApartIcon(item.title) }}
+        </div>
+        <h4 class="text-xl font-semibold mb-1 animate-fade-up delay-100">
+          {{ item.title }}
+        </h4>
+        <p class="text-gray-600 animate-fade-up delay-200">
+          {{ item.desc }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETITIVE ADVANTAGES -->
+<section class="py-20 bg-white">
+  <div class="container mx-auto">
+    <div class="text-center mb-14 reveal">
+      <h2 class="text-3xl font-bold text-gray-800 animate-fade-up">
+        Our Competitive Advantages
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="feature-card alt reveal" *ngFor="let item of advantageList">
+        <div class="icon text-4xl mb-3 animate-fade-up">
+          {{ getAdvantageIcon(item.title) }}
+        </div>
+        <h4 class="text-xl font-semibold mb-1 animate-fade-up delay-100">
+          {{ item.title }}
+        </h4>
+        <p class="text-gray-600 animate-fade-up delay-200">
+          {{ item.desc }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="py-20 bg-gray-50 reveal">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-10 animate-fade-up">
+      The NDE Energy Difference
+    </h2>
+
+    <div
+      class="overflow-x-auto bg-white rounded-xl shadow-lg animate-fade-up delay-100"
+    >
+      <table class="w-full text-sm">
+        <thead class="bg-[#4b8492] text-white">
+          <tr>
+            <th class="p-4 text-left">Feature</th>
+            <th class="p-4">NDE Energy</th>
+            <th class="p-4">Others</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let row of compare"
+            class="border-b animate-fade-up delay-200"
+          >
+            <td class="p-4 font-medium">{{ row.feature }}</td>
+            <td class="p-4 text-center text-green-600">✔</td>
+            <td class="p-4 text-center text-red-500">✖</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section
+  class="relative py-28 text-white text-center reveal bg-cover bg-center"
+  style="
+    background-image:
+      linear-gradient(rgba(75, 132, 146, 0.9), rgba(75, 132, 146, 0.9)),
+      url(assets/whyChoose.jpeg);
+  "
+>
+  <h2 class="text-4xl font-bold mb-4 animate-fade-up">
+    Experience the NDE Energy Advantage
+  </h2>
+  <p class="mb-8 opacity-90 animate-fade-up delay-100">
+    Join hundreds of satisfied clients across Bangladesh
+  </p>
+
+  <div class="flex justify-center gap-6 animate-fade-up delay-200">
+    <a
+      routerLink="/contact"
+      class="px-8 py-3 bg-white text-[#4b8492] font-semibold rounded-lg hover:scale-105 transition"
+      >Request Quote</a
+    >
+    <a
+      routerLink="/products"
+      class="px-8 py-3 border border-white rounded-lg hover:bg-white hover:text-[#4b8492] transition"
+      >View Products</a
+    >
+  </div>
+</section>

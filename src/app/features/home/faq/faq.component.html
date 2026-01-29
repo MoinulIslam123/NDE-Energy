@@ -1,0 +1,16 @@
+<!-- FAQ -->
+<section id="faq" class="py-16 bg-gray-100">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">FAQs</h2>
+    <div class="space-y-4">
+      <div
+        *ngFor="let faq of faqs"
+        class="collapse collapse-arrow border border-gray-300 rounded-lg"
+      >
+        <input type="checkbox" />
+        <div class="collapse-title font-medium text-lg">{{ faq.question }}</div>
+        <div class="collapse-content text-gray-700">{{ faq.answer }}</div>
+      </div>
+    </div>
+  </div>
+</section>

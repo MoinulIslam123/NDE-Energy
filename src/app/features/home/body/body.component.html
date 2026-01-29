@@ -1,81 +1,4 @@
-<!-- WHY NDE ENERGY -->
-<section
-  id="why-us"
-  class="py-16 sm:py-20 relative overflow-hidden"
-  style="background: var(--primary-color); color: white"
->
-  <!-- Floating blobs -->
-  <div
-    class="absolute -top-20 -left-20 w-72 sm:w-96 h-72 sm:h-96 bg-white/10 rounded-full animate-blob"
-  ></div>
-  <div
-    class="absolute -bottom-32 -right-32 w-72 sm:w-96 h-72 sm:h-96 bg-white/20 rounded-full animate-blob animation-delay-2000"
-  ></div>
 
-  <div class="text-center mx-auto max-w-6xl relative z-10 px-4 sm:px-6">
-    <h2
-      class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-8 sm:mb-12 tracking-wide drop-shadow-lg animate-fade-slide"
-    >
-      Why NDE Energy
-    </h2>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10">
-      <!-- Card 1 -->
-      <div
-        class="why-card group p-6 sm:p-8 rounded-xl bg-white/10 hover:bg-white/20 transition"
-      >
-        <div class="icon-wrapper mb-4">
-          <img
-            src="https://img.icons8.com/ios-filled/50/ffffff/shield.png"
-            class="mx-auto"
-          />
-        </div>
-        <h4 class="text-xl sm:text-2xl font-semibold mb-2 text-center">
-          Reliability
-        </h4>
-        <p class="text-sm sm:text-base text-center">
-          High-performance generators built for continuous operation.
-        </p>
-      </div>
-
-      <!-- Card 2 -->
-      <div
-        class="why-card group p-6 sm:p-8 rounded-xl bg-white/10 hover:bg-white/20 transition"
-      >
-        <div class="icon-wrapper mb-4">
-          <img
-            src="https://img.icons8.com/ios-filled/50/ffffff/globe.png"
-            class="mx-auto"
-          />
-        </div>
-        <h4 class="text-xl sm:text-2xl font-semibold mb-2 text-center">
-          Global Projects
-        </h4>
-        <p class="text-sm sm:text-base text-center">
-          Supplying power solutions to industries worldwide.
-        </p>
-      </div>
-
-      <!-- Card 3 -->
-      <div
-        class="why-card group p-6 sm:p-8 rounded-xl bg-white/10 hover:bg-white/20 transition"
-      >
-        <div class="icon-wrapper mb-4">
-          <img
-            src="https://img.icons8.com/ios-filled/50/ffffff/settings.png"
-            class="mx-auto"
-          />
-        </div>
-        <h4 class="text-xl sm:text-2xl font-semibold mb-2 text-center">
-          Custom Design
-        </h4>
-        <p class="text-sm sm:text-base text-center">
-          Generator systems tailored to your specific energy requirements.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- PARTNERS -->
 <section id="partners" class="py-20 relative bg-gray-50 overflow-hidden">
@@ -140,37 +63,35 @@
     </p>
 
     <!-- STATS -->
-    <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6">
+    <div
+      class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 stats-grid"
+    >
       <div
-        class="bg-white/60 backdrop-blur rounded-xl py-4 sm:py-6 fade-up fade-delay-1 shadow-md"
+        class="stat bg-white/60 backdrop-blur rounded-xl py-4 sm:py-6 shadow-md"
       >
         <h3 class="text-2xl sm:text-3xl font-bold">20+</h3>
         <p class="text-xs sm:text-sm mt-1">Years Experience</p>
       </div>
-
       <div
-        class="bg-white/60 backdrop-blur rounded-xl py-4 sm:py-6 fade-up fade-delay-2 shadow-md"
+        class="stat bg-white/60 backdrop-blur rounded-xl py-4 sm:py-6 shadow-md"
       >
         <h3 class="text-2xl sm:text-3xl font-bold">400+</h3>
         <p class="text-xs sm:text-sm mt-1">Employees</p>
       </div>
-
       <div
-        class="bg-white/60 backdrop-blur rounded-xl py-4 sm:py-6 fade-up fade-delay-3 shadow-md"
+        class="stat bg-white/60 backdrop-blur rounded-xl py-4 sm:py-6 shadow-md"
       >
         <h3 class="text-2xl sm:text-3xl font-bold">25%</h3>
         <p class="text-xs sm:text-sm mt-1">Engineers</p>
       </div>
-
       <div
-        class="bg-white/60 backdrop-blur rounded-xl py-4 sm:py-6 fade-up fade-delay-4 shadow-md"
+        class="stat bg-white/60 backdrop-blur rounded-xl py-4 sm:py-6 shadow-md"
       >
         <h3 class="text-2xl sm:text-3xl font-bold">47,000 m²</h3>
         <p class="text-xs sm:text-sm mt-1">Plant Area</p>
       </div>
-
       <div
-        class="bg-white/60 backdrop-blur rounded-xl py-4 sm:py-6 fade-up fade-delay-5 shadow-md"
+        class="stat bg-white/60 backdrop-blur rounded-xl py-4 sm:py-6 shadow-md"
       >
         <h3 class="text-2xl sm:text-3xl font-bold">780,000</h3>
         <p class="text-xs sm:text-sm mt-1">Monthly Capacity</p>
@@ -190,113 +111,3 @@
   </div>
 </section>
 
-<!-- FAQ -->
-<section id="faq" class="py-16 bg-gray-100">
-  <div class="container mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-8">FAQs</h2>
-    <div class="space-y-4">
-      <div
-        *ngFor="let faq of faqs"
-        class="collapse collapse-arrow border border-gray-300 rounded-lg"
-      >
-        <input type="checkbox" />
-        <div class="collapse-title font-medium text-lg">{{ faq.question }}</div>
-        <div class="collapse-content text-gray-700">{{ faq.answer }}</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-black text-white mt-16">
-  <div class="container mx-auto py-12 px-6 grid md:grid-cols-3 gap-6">
-    <div>
-      <h3 class="text-xl font-bold mb-2" style="color: var(--primary-color)">
-        About NDE Energy
-      </h3>
-      <p class="text-gray-200">
-        NDE Energy Ltd provides reliable industrial generators and custom power
-        solutions for businesses worldwide.
-      </p>
-    </div>
-    <div>
-      <h3 class="text-xl font-bold mb-2" style="color: var(--primary-color)">
-        Quick Links
-      </h3>
-      <ul class="space-y-1">
-        <li>
-          <a
-            href="#hero"
-            style="color: var(--primary-color)"
-            class="hover:text-opacity-80"
-            >Home</a
-          >
-        </li>
-        <li>
-          <a
-            href="#products"
-            style="color: var(--primary-color)"
-            class="hover:text-opacity-80"
-            >Products</a
-          >
-        </li>
-        <li>
-          <a
-            href="#why-us"
-            style="color: var(--primary-color)"
-            class="hover:text-opacity-80"
-            >Why Us</a
-          >
-        </li>
-        <li>
-          <a
-            href="#partners"
-            style="color: var(--primary-color)"
-            class="hover:text-opacity-80"
-            >Partners</a
-          >
-        </li>
-        <li>
-          <a
-            href="#faq"
-            style="color: var(--primary-color)"
-            class="hover:text-opacity-80"
-            >FAQs</a
-          >
-        </li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="text-xl font-bold mb-2" style="color: var(--primary-color)">
-        Contact
-      </h3>
-      <p class="text-gray-200">123 Energy Street, Industrial City</p>
-      <p class="text-gray-200">Phone: +123 456 7890</p>
-      <p class="text-gray-200">Email: info.ndeenergy.com</p>
-      <div class="flex space-x-4 mt-2">
-        <a
-          href="#"
-          style="color: var(--primary-color)"
-          class="hover:text-opacity-80"
-          >FB</a
-        >
-        <a
-          href="#"
-          style="color: var(--primary-color)"
-          class="hover:text-opacity-80"
-          >LinkedIn</a
-        >
-        <a
-          href="#"
-          style="color: var(--primary-color)"
-          class="hover:text-opacity-80"
-          >Twitter</a
-        >
-      </div>
-    </div>
-  </div>
-
-  <div class="text-center text-gray-300 py-4 border-t border-gray-600 bg-black">
-    © 2026 NDE Energy Ltd. All Rights Reserved.
-  </div>
-</footer>
