@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -8,11 +8,30 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit, AfterViewInit {
   showToast = false;
 
   constructor(private renderer: Renderer2) {}
+  ngAfterViewInit() {
+    this.initScrollReveal();
+  }
 
+  initScrollReveal() {
+    const elements = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+
+    elements.forEach((el) => observer.observe(el));
+  }
   ngOnInit(): void {
     this.init3DCardEffect();
   }
